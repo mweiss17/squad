@@ -1,0 +1,85 @@
+Ecstatic Web Server
+
+
+File structure:
+ecstatic is the main folder for the app.
+in it, we have bower.son and package.json. not really sure what they do.
+We have gruntfile.js, which is necessary for running tests.
+We have the startup file in /etc/init/ecstatic.conf. I added some comments in there.
+
+Server Networking
+I rerouted port 80 to port 3000 because node does not like to bind to ports under 1024.
+This is done on server startup in /etc/rc.local. For more info on this, check : http://stackoverflow.com/questions/16573668/best-practices-when-running-node-js-with-port-80-ubuntu-linode
+
+How to Run the Server: sudo ecstatic start
+How to Stop the Server: sudo ecstatic stop
+Check the Logs @ : /var/log/ecstatic.sys.log
+	The command is "tail -f /var/log/ecstatic.sys.log"
+Why the server stays up: a tool called "monit"
+The guide: http://howtonode.org/deploying-node-upstart-monit
+
+Writing and Running Tests:
+To run the test suit, use the command “grunt test” when in the ecstatic/test folder.
+To write tests, enter the file in the test folder (the file name is test.js) and follow the structure of the tests already in there. We are using Grunt with the Mocha. For specific package details, enter Gruntfile.js. 
+
+
+EcstaticWeb
+Soundcloud
+How to get thumbnail sizes
+http://stackoverflow.com/questions/9096120/how-to-get-thumbnail-of-soundcloud-using-api
+api call 
+https://api.soundcloud.com/tracks/127646863.json?client_id=4cd54fa30dd13312d10dd24cc2bdcae4
+silentdiscosquad user_id = 50801632
+rusk user_id = 1207127
+rusko set id = https://api.soundcloud.com/playlists/47426239.json?client_id=4cd54fa30dd13312d10dd24cc2bdcae4
+resolve api from curl -v 'http://api.soundcloud.com/resolve.json?url=http://soundcloud.com/matas/hobnotropic&client_id=YOUR_CLIENT_ID' 
+
+Angular
+Command to modify node_path; in an effort to fix our terribly broken code  
+echo "export NODE_PATH=$NODE_PATH:/home/ubuntu/.node/lib/node_modules" >> ~/.bashrc && source ~/.bashrc
+application directory structure automated
+http://yeoman.io/
+https://github.com/yeoman/generator-angular
+Node tools:
+ https://www.airpair.com/node.js/posts/top-10-mistakes-node-developers-make
+How Node Modules and import works
+ http://www.sitepoint.com/understanding-module-exports-exports-node-js/
+How to serve a one page
+http://stackoverflow.com/questions/28565525/how-can-i-go-about-serving-single-page-html-using-node-js-on-port-80
+How to serve two ports from one node instance
+ http://stackoverflow.com/questions/15098823/using-node-js-to-listen-on-2-different-ports
+Mongo Node
+http://mongoosejs.com/
+http://stackoverflow.com/questions/26161319/retrieving-data-from-mongodb-using-mongoose-not-working
+When we want video:
+Videogular (angular player)
+https://github.com/2fdevs/bower-videogular-themes-default
+http://www.videogular.com/examples/creating-an-audio-player/
+
+Node.js
+Introduction to node
+http://nodebeginner.org/
+Promises:
+https://www.promisejs.org/
+Async library (mapping, parallel):
+http://promise-nuggets.github.io/articles/14-map-in-parallel.html
+
+
+
+Redis
+How to install redis
+http://codingsteps.com/install-redis-2-6-on-amazon-ec2-linux-ami-or-centos/
+URL Get Requests
+http://54.173.157.204/geo/post_location/?username=mweiss10&my_location_lat=100.0&my_location_lon=30.0
+http://54.173.157.204/geo/get_nearest_users/?username=mweiss10
+http://54.173.157.204/geo/get_most_recent_location/?user_id=21
+Redis Geo
+https://github.com/arjunmehta/node-geo-proximity
+How to restart the server
+CMD: sudo service redis-server start
+Asynchronous redis node library
+https://github.com/mjackson/then-redis
+How to build a chat server (node and redis)
+http://matthewdaly.co.uk/blog/2014/12/31/building-a-chat-server-with-node-dot-js-and-redis/
+How pubsub works:
+https://github.com/rajaraodv/redispubsub

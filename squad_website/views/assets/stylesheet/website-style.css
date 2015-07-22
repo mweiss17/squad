@@ -1,0 +1,57 @@
+@font-face {
+  font-family: "FontAwesome";
+  src: url("http://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/fonts/fontawesome-webfont.eot?v=4.3.0");
+  src: url("http://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/fonts/fontawesome-webfont.eot?#iefix&v=4.3.0") format("embedded-opentype"); }
+body {
+  margin-top: 2em;
+  font-family: "Raleway", sans-serif;
+  color: #777777; }
+
+ul {
+  list-style: none; }
+
+.header {
+  text-align: center; }
+
+.desc {
+  font-size: 2em;
+  padding: 0; }
+
+.logo {
+  width: 200px;
+  padding-bottom: 1em; }
+
+.screenshot {
+  text-align: center; }
+
+.phone {
+  width: 200px; }
+
+.cta {
+  text-align: center; }
+  .cta p {
+    padding-top: 1.5em;
+    font-size: 1.5em; }
+  .cta input {
+    position: relative;
+    width: 22em;
+    height: 52px;
+    border-radius: 12px;
+    border: 1px solid #777777;
+    padding: 0.8em; }
+  .cta button {
+    margin-top: 0.5em;
+    margin-left: 0.1em;
+    color: white;
+    background-color: #CE6182;
+    border-radius: 12px;
+    border: none;
+    height: 52px;
+    width: 140px;
+    font-size: 1.5em; }
+  .cta button:hover {
+    background-color: white;
+    border: 1px solid #CE6182;
+    color: #CE6182; }
+
+/*# sourceMappingURL=website-style.css.map */

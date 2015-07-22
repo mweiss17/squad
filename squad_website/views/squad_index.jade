@@ -1,0 +1,42 @@
+doctype html
+html(lang="en", prefix="og: http://ogp.me/ns#")
+	head
+		title="Squad"
+		link(rel='stylesheet', type='text/css', href='https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css')
+		link(rel='stylesheet', type='text/css', href='assets/stylesheet/website-style.css')
+		link(rel='stylesheet', type='text/css', href='http://fonts.googleapis.com/css?family=Raleway:100')
+		link(rel='stylesheet', href='http://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css')
+		link(rel='icon', type='image/png', href='http://squad.fm/assets/images/favicon.png')
+		meta(name='viewport', content='width=device-width, initial-scale=1')
+		meta(property='og:type', content='website')
+		meta(property='og:image', content='http://www.squad.fm/assets/images/og-squad-1200x630_1024.png')
+		meta(property="og:title" content="Squad") 
+		meta(property="og:description" content="Squad is the best way to listen together. Gather with people you love. Rock out with your headphones.  Party it up silent disco style.")
+		meta(name='keywords', content='Squad.fm, Squad app, Silent Disco Squad, Music Sharing, Music Streaming, Soundcloud, Synchronized, dance')
+		meta(name='description', content='Squad is the best way to listen together. Gather with people you love. Rock out with your headphones.  Party it up silent disco style.')
+		script(src='assets/js/analytics.js')
+		script(src='assets/js/facebook_share.js')
+		script(src="//cdn.optimizely.com/js/2585220010.js")
+		#fb-root
+
+	body
+		.container-fluid
+			.header.row.col-md-6.col-md-offset-1
+				ul.desc
+					li
+						img.logo(src='assets/images/logo-494x590.png')
+					li Share music.
+					li Party in the streets.
+					li The world is our dancefloor.
+			.screenshot.row.col-md-2.col-md-offset-1
+				img.phone(src='assets/images/phone-478-993.png')
+
+		.container-fluid
+			.cta.row.col-md-12
+				p Sign up for the Beta to help us make this possible!
+					#mc_embed_signup_scroll
+						input#mce-EMAIL(placeholder='E-mail', type="email", value="", name="EMAIL", required)
+						div(style="position: absolute; left: -5000px;")
+							input(type="text" name="b_40ad662203e2b34a730bc62c8_dc9a8a03b2" tabindex="-1" value="")
+						button#mc-embedded-subscribe(onclick="signup()") Invite Me!
+				.fb-share-button(data-href="http://squad.fm/", data-layout="button_count")

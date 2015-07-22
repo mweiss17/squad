@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html ng-app="ecstatic">
+  <head>
+    <title></title>
+    <!-- external imports-->
+    <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Raleway:600,300,200" type="text/css">
+    <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Lato:400,100" type="text/css">
+    <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Raleway:600,300,200" type="text/css">
+    <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Lato:400,100" type="text/css">
+    <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.4.0/angular.js"></script>
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+    <script src="http://cdnjs.cloudflare.com/ajax/libs/ScrollMagic/2.0.5/ScrollMagic.min.js"></script>
+    <script src="http://cdnjs.cloudflare.com/ajax/libs/ScrollMagic/2.0.5/plugins/debug.addIndicators.min.js"></script>
+    <script src="http://cdnjs.cloudflare.com/ajax/libs/gsap/1.14.2/TweenMax.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/ScrollMagic/2.0.3/plugins/animation.gsap.js"></script>
+    <script src="http://d2v52k3cl9vedd.cloudfront.net/plangular/3.0.1/plangular.min.js"></script>
+    <!-- internal imports-->
+    <link rel="stylesheet" href="assets/stylesheets/app.css">
+    <link rel="stylesheet" href="assets/stylesheets/player.css">
+    <link rel="stylesheet" href="assets/stylesheets/ecstatic.css">
+    <script src="assets/js/socket.io-client/socket.io.js"></script>
+    <script src="assets/js/ecstaticSocketsClient.js"></script>
+    <script src="assets/js/app.js"></script>
+    <script src="assets/js/countdown.js"></script>
+    <script src="assets/js/scrollz.js"></script>
+    <script src="assets/bower_components/angular-sanitize/angular-sanitize.min.js"></script>
+    <script src="assets/bower_components/videogular/videogular.js"></script>
+    <script src="assets/bower_components/videogular-controls/vg-controls.js"></script>
+    <script src="assets/bower_components/videogular-overlay-play/vg-overlay-play.js"></script>
+    <script src="assets/bower_components/videogular-poster/vg-poster.js"></script>
+    <script src="assets/bower_components/videogular-angulartics/vg-analytics.js"></script>
+    <script src="assets/bower_components/videogular-buffering/vg-buffering.js"></script>
+  </head>
+  <body>
+    <div ng-controller="mainController as main">
+      <div id="container">
+        <div id="cover" class="section hidden"><img src="lgo-255x255.png" class="logo">
+          <h4>Next up</h4>
+          <h1 ng-bind="upcomingEvents.title">{{main.upcomingEvents.title}} </h1><span><img icn-clock.png></span>
+          <div class="row">
+            <div class="small-4 columns">
+              <p id="counter"> </p>
+            </div>
+            <div class="small-4 columns">
+              <ul class="small-block-grid-3">
+                <li>
+                  <ul class="countdown">
+                    <li class="n">421</li>
+                    <li class="w">hours</li>
+                  </ul>
+                </li>
+                <li>
+                  <ul class="countdown">
+                    <li class="n">12</li>
+                    <li class="w">minutes</li>
+                  </ul>
+                </li>
+                <li>
+                  <ul class="countdown">
+                    <li class="n">42</li>
+                    <li class="w">seconds</li>
+                  </ul>
+                </li>
+              </ul>
+            </div>
+            <div class="small-4 columns">
+              <p></p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div id="player" class="section">
+        <div class="row fullWidth">
+          <div id="playing" class="small-12 large-7 columns"><img src="assets/images/img-cover-holder-417-280.png" class="cover-art">
+            <h3>Deepcast vol 34</h3>
+            <h5>by Mark Macleod from </h5>
+            <div plangularApp="http://soundcloud.com/jxnblk/plangular">
+              <button ng-click="playPause()">Play</button>
+            </div>
+            <div class="left">
+              <p>0:00</p>
+            </div>
+            <div class="right">
+              <p>9:99</p>
+            </div>
+            <div class="progress"><span class="meter"></span></div>
+          </div>
+          <div id="playlist" class="large-5 columns">
+            <table>
+              <tbody>
+                <tr ng-repeat="song in playlist"> 
+                  <td><img src="assets/images/img-empty-avatar-58x58.png"></td>
+                  <td>#</td>
+                  <td>
+                    <ul>
+                      <li>{{song.title}}</li>
+                      <li>{{song.author}}</li>
+                    </ul>
+                  </td>
+                  <td>{{song.duration}} </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

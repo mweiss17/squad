@@ -1,0 +1,91 @@
+doctype html
+html(ng-app='ecstatic')
+	head
+		title= Ecstatic
+		// external imports
+		link(rel='stylesheet', href='http://fonts.googleapis.com/css?family=Raleway:400,200,100', type='text/css')
+		link(rel='stylesheet', href='http://fonts.googleapis.com/css?family=Lato:400,100', type='text/css')
+		script(src='http://ajax.googleapis.com/ajax/libs/angularjs/1.4.0/angular.js')
+		script(src='http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js')
+		link(rel='stylesheet', href='http://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css')
+
+		// internal imports
+		link(rel='stylesheet', href='/app/assets/stylesheets/app.css')
+		link(rel='stylesheet', href='/app/assets/stylesheets/player.css')
+		link(rel='stylesheet', href='/app/assets/stylesheets/ecstatic.css')
+		script(src='/app/assets/bower_components/angular-sanitize/angular-sanitize.min.js')
+		script(src='/app/assets/bower_components/angular-animate/angular-animate.js')
+		script(src='/app/assets/js/libs/socket.io-client/socket.io.js')
+		script(src='/app/assets/js/libs/countdown.js')
+		script(src='/app/assets/js/libs/scrollz.js')
+		script(src='/app/assets/js/ecstaticSocketsClient.js')
+		script(src='/app/assets/js/app.js')
+		script(src='/app/assets/js/plangular.js')
+
+	//THE APP
+	body(ng-controller='mainController as main')
+		.plangular(plangular='https://soundcloud.com/silentdiscosquad/sets/international-startup-fest')
+			
+			//LANDING PAGE
+			#cover.section.dude(ng-hide='bool')
+				img.logo(src='/app/assets/images/logo-onwhite.png')
+				br
+				h4(class="{{currentlyPlaying}}") Next up
+				h4(class="{{showButton}}") On Air 
+				h1(ng-bind="upcomingEvents.title") {{main.upcomingEvents.title}} 
+				.row
+					
+					span: img.clock(src='/app/assets/images/icn-clock-42x42.png', class="{{currentlyPlaying}}")
+
+					.small-12.large-12.columns(class="{{currentlyPlaying}}")
+						ul.countdown
+							li.n#hours {{main.hours}}
+							li.w hours
+						ul.countdown
+							li.n#minutes {{main.minutes}}
+							li.w minutes
+						ul.countdown
+							li.n#seconds {{main.seconds}}
+							li.w seconds
+					.small-12.large-12.columns.askbox
+						form(class="{{showButton}}")
+							button#showButton.dudebutton(ng-init='bool=false', ng-click='seekSync(); bool=true;', ng-hide='bool') Tune in
+							button#showButton.dudebutton.dudebutton2(ng-show='bool'): i.fa.fa-circle-o-notch.fa-spin-custom
+			
+			//THE PLAYER
+			#player.section
+				.row.fullWidth
+					#playing.small-12.medium-4.large-7.columns
+						.invite-bar
+							p Our app is still in beta.     
+								a(href="/", target="_blank")
+									button#mc-embedded-subscribe.dudebutton(onclick="clickBeta()") Invite Me!
+					.container-fluid
+						img(src='{{ track.artwork_url.replace("-large", "-t300x300") }}', class='cover-art')
+						
+						h3 {{track.title}}
+
+						.left
+							p {{ currentTime | hhmmss }}
+						.right
+							p {{ duration | hhmmss }}
+						br
+						br
+						progress.playerprogressbar(ng-value="currentTime / duration || 0")
+							{{ currentTime / duration || 0}} 
+							.progress.meter(ng-value="currentTime / duration") {{ currentTime / duration }}
+							
+						br
+
+					//THE PLAYLIST
+					#playlist.medium-6.large-5.columns
+						
+						table
+							tbody
+								tr(ng-class='{selected: $index === trackIndex}', ng-repeat="track in tracks") 
+									td.ordering 
+									td.trackinfo: ul
+											li {{track.title}}
+											li {{track.user.username}}
+									td.duration {{track.duration/1000 | hhmmss}} 
+								tr.playlist-footer

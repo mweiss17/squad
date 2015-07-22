@@ -1,0 +1,41 @@
+{
+  "name": "node_ecstatic",
+  "version": "1.0.0",
+  "description": "The Realtime API for Ecstatic",
+  "main": "index.js",
+  "scripts": {
+    "test": "grunt test --verbose",
+    "start": "node index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/mweiss17/sdsDjango"
+  },
+  "keywords": [
+    "chat"
+  ],
+  "author": "Martin Weiss",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/mweiss17/sdsDjango/issues"
+  },
+  "homepage": "https://github.com/mweiss17/sdsDjango",
+  "dependencies": {
+    "express": "~4.12.4",
+    "hbs": "~3.0.1",
+    "hiredis": "~0.3.0",
+    "redis": "~0.12.1",
+    "socket.io": "~1.3.5",
+    "socket.io-client": "~1.3.5"
+  },
+  "devDependencies": {
+    "chai": "~3.0.0",
+    "grunt": "~0.4.5",
+    "grunt-contrib-jshint": "~0.11.2",
+    "grunt-coveralls": "~1.0.0",
+    "grunt-mocha-istanbul": "~2.4.0",
+    "istanbul": "~0.3.14",
+    "mocha": "~2.2.5",
+    "request": "~2.57.0"
+  }
+}

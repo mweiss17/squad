@@ -1,0 +1,37 @@
+{
+  "name": "gss",
+  "homepage": "http://gridstylesheets.org/",
+  "version": "2.0.0",
+  "authors": [
+    "Dan Tocchini <d4@thegrid.io>"
+  ],
+  "description": "Grid Style Sheets Runtime",
+  "main": [
+    "dist/gss.js",
+    "dist/gss.min.js"
+  ],
+  "keywords": [
+    "gss"
+  ],
+  "license": "MIT",
+  "ignore": [
+    ".gitignore",
+    ".travis.yml",
+    "/lib",
+    "/node_modules",
+    "/spec",
+    "/src",
+    "Gruntfile.coffee",
+    "package.json"
+  ],
+  "_release": "2.0.0",
+  "_resolution": {
+    "type": "version",
+    "tag": "v2.0.0",
+    "commit": "1b0ffd5d0a73301a13014022c247111df39321c5"
+  },
+  "_source": "git://github.com/the-gss/engine.git",
+  "_target": "~2.0.0",
+  "_originalSource": "gss",
+  "_direct": true
+}
