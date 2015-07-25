@@ -10,17 +10,17 @@ html(ng-app='ecstatic')
 		link(rel='stylesheet', href='http://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css')
 
 		// internal imports
-		link(rel='stylesheet', href='/app/assets/stylesheets/app.css')
-		link(rel='stylesheet', href='/app/assets/stylesheets/player.css')
-		link(rel='stylesheet', href='/app/assets/stylesheets/ecstatic.css')
-		script(src='/app/assets/bower_components/angular-sanitize/angular-sanitize.min.js')
-		script(src='/app/assets/bower_components/angular-animate/angular-animate.js')
-		script(src='/app/assets/js/libs/socket.io-client/socket.io.js')
-		script(src='/app/assets/js/libs/countdown.js')
-		script(src='/app/assets/js/libs/scrollz.js')
-		script(src='/app/assets/js/ecstaticSocketsClient.js')
-		script(src='/app/assets/js/app.js')
-		script(src='/app/assets/js/plangular.js')
+		link(rel='stylesheet', href='assets/stylesheets/app.css')
+		link(rel='stylesheet', href='assets/stylesheets/player.css')
+		link(rel='stylesheet', href='assets/stylesheets/ecstatic.css')
+		script(src='assets/bower_components/angular-sanitize/angular-sanitize.min.js')
+		script(src='assets/bower_components/angular-animate/angular-animate.js')
+		script(src='assets/js/libs/socket.io-client/socket.io.js')
+		script(src='assets/js/libs/countdown.js')
+		script(src='assets/js/libs/scrollz.js')
+		script(src='assets/js/ecstaticSocketsClient.js')
+		script(src='assets/js/app.js')
+		script(src='assets/js/plangular.js')
 
 	//THE APP
 	body(ng-controller='mainController as main')
@@ -28,14 +28,14 @@ html(ng-app='ecstatic')
 			
 			//LANDING PAGE
 			#cover.section.dude(ng-hide='bool')
-				img.logo(src='/app/assets/images/logo-onwhite.png')
+				img.logo(src='assets/images/logo-onwhite.png')
 				br
 				h4(class="{{currentlyPlaying}}") Next up
 				h4(class="{{showButton}}") On Air 
 				h1(ng-bind="upcomingEvents.title") {{main.upcomingEvents.title}} 
 				.row
 					
-					span: img.clock(src='/app/assets/images/icn-clock-42x42.png', class="{{currentlyPlaying}}")
+					span: img.clock(src='assets/images/icn-clock-42x42.png', class="{{currentlyPlaying}}")
 
 					.small-12.large-12.columns(class="{{currentlyPlaying}}")
 						ul.countdown
